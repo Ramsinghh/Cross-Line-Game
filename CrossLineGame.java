@@ -1,4 +1,5 @@
 import java.util.*;
+import java.lang.*;
 
 public class CrossLineGame {
 
@@ -88,7 +89,14 @@ public class CrossLineGame {
 
         System.out.println("Welcome to 3x3 Cross Line Game.");
         printBoard();
-        System.out.println("X will play first. Enter a slot number to place X in:");
+        int randomNum = 1 + (int)(Math.random() * 20);
+        if(randomNum<=10) {
+            System.out.println("X will play first. Enter a slot number to place X in:");
+        }
+        if(randomNum>10) {
+            turn = "*";
+            System.out.println("* will play first. Enter a slot number to place * in:");
+        }
 
         while (winner == null) {
             int numInput;
